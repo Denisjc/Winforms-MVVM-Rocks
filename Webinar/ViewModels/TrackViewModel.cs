@@ -36,6 +36,7 @@ namespace Webinar.ViewModels
         {
             return _track != null && !String.IsNullOrEmpty(Name);
         }
+
         public void ResetName()
         {
             if (_track != null)
@@ -55,6 +56,7 @@ namespace Webinar.ViewModels
         private void Load(TrackInfo track)
         {
             this._track = track;
+
             this.TrackId = _track.TrackId;
             this.Name = _track.Name;
             this.Composer = _track.Composer;
@@ -82,6 +84,7 @@ namespace Webinar.ViewModels
 
         public virtual int TrackId { get; set; }
         public virtual string Name { get; set; }
+
         protected void OnNameChanged()
         {
             this.RaiseCanExecuteChanged(x => x.ResetName());
